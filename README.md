@@ -16,7 +16,7 @@ Example Usage
 		    components: [
 		        {
 		            name: "win",
-		            kind: "enyo.InAppBrowser",
+		            kind: "jb.InAppBrowser",
 		            onExit: "onWindowExit",
 		            onLoadStart: "onWindowLoadStart",
 		            onLoadStop: "onWindowLoadStop"

@@ -1,5 +1,5 @@
 enyo.kind({
-    name: "enyo.InAppBrowser",
+    name: "jb.InAppBrowser",
     published: {
         url: "",
         baseUrl: "",
@@ -13,7 +13,7 @@ enyo.kind({
     },
     open: function (url, target, options) {
         var self = this;
-        
+
         url = url || this.url;
         options = options || this.options;
         target = target || this.target;
