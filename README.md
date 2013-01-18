@@ -73,7 +73,7 @@ Actions
 		this.$.win.setBaseUrl("http://www.google.com/");
 
 		// if base url is set you can call open like this
-		this.$.win.open("imghp"); // open google images search
+		this.$.win.open("imghp"); // open http://www.google.com/imghp
 		
 License
 -------
