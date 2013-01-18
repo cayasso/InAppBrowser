@@ -65,12 +65,15 @@ Events
 Actions
 -------
 
-		this.$.win.open();
+		this.$.win.open("http://www.google.com/img");
 		this.$.win.close();
-		this.$.win.setUrl();
-		this.$.win.setTarget();
-		this.$.win.setOptions();
-		this.$.win.setBaseUrl();
+		this.$.win.setUrl("http://www.google.com/");
+		this.$.win.setTarget("_system");
+		this.$.win.setOptions("location=yes");
+		this.$.win.setBaseUrl("http://www.google.com/");
+
+		// if base url is set you can call open like this
+		this.$.win.open("imghp"); // open google images search
 		
 License
 -------
