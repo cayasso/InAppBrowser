@@ -1,7 +1,7 @@
-ActioSheet
-==========
+InAppBrowser
+============
 
-Enyo 2 plugin for handling new InAppBrowser feature in PhoneGap 2.3.0+
+Enyo 2 plugin for handling `InAppBrowser` feature in PhoneGap 2.3.0+
 
 Dependencies
 ------------
@@ -19,7 +19,8 @@ Example Usage
 		            kind: "jb.InAppBrowser",
 		            onExit: "onWindowExit",
 		            onLoadStart: "onWindowLoadStart",
-		            onLoadStop: "onWindowLoadStop"
+		            onLoadStop: "onWindowLoadStop",
+		            onLoadError: "onWindowLoadError"
 		        }
 		    ],
 
@@ -44,6 +45,10 @@ Example Usage
 		    onWindowExit: function (inSender, inEvent) {
 		        // handle on exit
 		        console.log(inEvent);
+		    },
+		     onWindowLoadError: function (inSender, inEvent) {
+		        // handle on load error
+		        console.log(inEvent);
 		    }
 		});
 
@@ -60,7 +65,8 @@ Events
 
 		onExit: "",
         onLoadStart: "",
-        onLoadStop: ""
+        onLoadStop: "",
+        onLoadError: ""
 
 Actions
 -------
@@ -80,7 +86,7 @@ License
 
 (The MIT License)
 
-Copyright (C) 2013 Jonathan Brumley <cayasso@gmail.com>
+Copyright (C) 2014 Jonathan Brumley <cayasso@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
