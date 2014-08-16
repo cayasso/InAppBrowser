@@ -9,7 +9,8 @@ enyo.kind({
     events: {
         onExit: "",
         onLoadStart: "",
-        onLoadStop: ""
+        onLoadStop: "",
+        onLoadError: ""
     },
     open: function (url, target, options) {
         var self = this;
@@ -29,6 +30,11 @@ enyo.kind({
         this.loadStop = function (event) {
             self.doLoadStop(event);
         };
+
+        this.loadError = function (event) {
+            self.doLoadError(event);
+        };
+
         this.win = window.open(this.baseUrl + url, target, options);
         self.bindEvents();
         return this;
@@ -41,11 +47,13 @@ enyo.kind({
         this.win.addEventListener("exit", this.exit);
         this.win.addEventListener("loadstart", this.loadStart);
         this.win.addEventListener("loadstop", this.loadStop);
+        this.win.addEventListener("loaderror", this.loadError);
     },
     unbindEvents: function () {
         if (!this.win) return;
         this.win.removeEventListener("exit", this.exit);
         this.win.removeEventListener("loadstart", this.loadStart);
         this.win.removeEventListener("loadstop", this.loadStop);
+        this.win.removeEventListener("loaderror", this.loadError);
     }
 });
